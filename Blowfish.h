@@ -70,7 +70,7 @@ union aword {
 #endif
 // blowfish.h2  header file containing random number tables
 
-static DWORD bf_P[NPASS + 2] = {
+static DWORD bf_P[NPASS + 2]  = {
   0x243f6a88, 0x85a308d3, 0x13198a2e, 0x03707344,
   0xa4093822, 0x299f31d0, 0x082efa98, 0xec4e6c89,
   0x452821e6, 0x38d01377, 0xbe5466cf, 0x34e90c6c,
@@ -513,10 +513,8 @@ void CBlowFish::Decode(BYTE * pInput, BYTE * pOutput, DWORD lSize) {
       // so copy input to output before decoding
       pi = pInput;
       po = pOutput;
-      for (i = 0; i < 8; i++)
-        *po++ = *pi++;
-      Blowfish_decipher((DWORD *) pOutput,
-                        (DWORD *)(pOutput + 4));
+      for (i = 0; i < 8; i++) *po++ = *pi++;
+      Blowfish_decipher((DWORD *) pOutput, (DWORD *)(pOutput + 4));
       pInput += 8;
       pOutput += 8;
     }
