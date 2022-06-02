@@ -1,4 +1,4 @@
-# RAK4631_Blowfish
+# Wisblock RAK4631_Blowfish
 
 Based on Bruce Schneier's code, see [this page](https://www.schneier.com/books/applied-cryptography-source/).
 
@@ -53,8 +53,9 @@ const PROGMEM DWORD bf_P[NPASS + 2]  = {
 const PROGMEM DWORD bf_S[4][256] = {
 ```
 
-That's about it. The rest of the code will work unchanged on:
+That's about it. The rest of the code will work unchanged on (tested with boards I own):
 
 * ESP32
 * Arduino Uno
 * Arduino Mega
+* BastWAN / RAK4260 (ATSAMR34J18B)
